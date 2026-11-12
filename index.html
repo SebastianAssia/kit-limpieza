@@ -3,26 +3,36 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kit de Limpieza y Protección para tu Hogar</title>
+<title>Kit de Limpieza Energética y Aromas de Protección para tu Hogar</title>
+<meta name="description" content="Kit tradicional de fin de año para limpiar y perfumar tu hogar. Pagas al recibir.">
 <style>
-  :root{--verde:#1f5f3a;--verde2:#2f8a54;--dorado:#e0a82e;--crema:#fbf6ea;--tinta:#1d2a22;--gris:#5b665f}
+  :root{
+    --verde:#1f5f3a; --verde2:#2f8a54; --dorado:#e0a82e; --crema:#fbf6ea; --tinta:#1d2a22; --gris:#5b665f; --rojo:#b3261e;
+  }
   *{box-sizing:border-box}
-  body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--tinta);background:var(--crema);line-height:1.5}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--tinta);background:var(--crema);line-height:1.5;padding-bottom:84px}
   .wrap{max-width:560px;margin:0 auto;padding:0 18px}
-  header.hero{background:linear-gradient(160deg,var(--verde) 0%,#12391f 100%);color:#fff;padding:34px 0 40px;text-align:center}
+  header.hero{background:linear-gradient(160deg,var(--verde) 0%,#12391f 100%);color:#fff;padding:30px 0 34px;text-align:center}
   .tag{display:inline-block;background:rgba(224,168,46,.18);color:var(--dorado);border:1px solid rgba(224,168,46,.5);padding:4px 12px;border-radius:99px;font-size:13px;letter-spacing:.04em}
-  h1{font-size:30px;line-height:1.15;margin:14px 0 8px}
-  .sub{opacity:.9;margin:0 auto 22px;max-width:420px}
+  h1{font-size:29px;line-height:1.15;margin:14px 0 8px}
+  .sub{opacity:.92;margin:0 auto 20px;max-width:430px}
   .imgbox{margin:0 auto;max-width:360px;border-radius:18px;overflow:hidden;background:#0e2d19;border:2px solid rgba(224,168,46,.4);box-shadow:0 14px 34px rgba(0,0,0,.35);aspect-ratio:1/1;display:flex;align-items:center;justify-content:center}
   .imgbox img{width:100%;height:100%;object-fit:cover;display:block}
   .imgbox .ph{color:var(--dorado);font-weight:700;padding:20px;text-align:center;font-size:20px}
-  .precio{margin:22px auto 0;display:flex;align-items:baseline;justify-content:center;gap:10px}
+  .precio{margin:20px auto 0;display:flex;align-items:baseline;justify-content:center;gap:10px;flex-wrap:wrap}
   .precio b{font-size:38px;color:var(--dorado)}
-  .precio span{opacity:.85}
+  .precio span{opacity:.88}
+  .combos{margin:12px auto 0;font-size:15px;background:rgba(255,255,255,.1);border:1px dashed rgba(224,168,46,.6);border-radius:12px;padding:10px 12px;max-width:430px}
+  .combos b{color:var(--dorado)}
   .btn{display:block;width:100%;border:0;border-radius:14px;background:var(--dorado);color:#2a1c00;font-weight:800;font-size:18px;padding:16px;cursor:pointer;text-align:center;text-decoration:none}
   .btn:active{transform:scale(.99)}
+  .btn:disabled{opacity:.7}
   .cta{margin-top:18px}
-  section{padding:30px 0}
+  .trust{background:#fff;border-bottom:1px solid #eadfc6}
+  .trust .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding-top:12px;padding-bottom:12px;text-align:center;font-size:12.5px;color:var(--gris)}
+  .trust b{display:block;color:var(--verde);font-size:20px;line-height:1.2}
+  section{padding:28px 0 10px}
   h2{font-size:22px;margin:0 0 14px;color:var(--verde)}
   .pasos{display:grid;gap:12px}
   .paso{background:#fff;border-radius:14px;padding:14px 16px;border:1px solid #eadfc6}
@@ -33,15 +43,33 @@
   ul.check li:before{content:"✓";color:var(--verde2);font-weight:900;margin-right:8px}
   .formcard{background:#fff;border-radius:18px;padding:20px;border:1px solid #eadfc6;box-shadow:0 8px 24px rgba(31,95,58,.10)}
   label{display:block;font-weight:600;font-size:14px;margin:12px 0 5px}
-  input,select{width:100%;padding:13px 12px;border:1.5px solid #d9ccb0;border-radius:11px;font-size:16px;background:#fffdf7;font-family:inherit}
-  input:focus,select:focus{outline:none;border-color:var(--verde2)}
+  input[type=text],input[type=tel]{width:100%;padding:13px 12px;border:1.5px solid #d9ccb0;border-radius:11px;font-size:16px;background:#fffdf7;font-family:inherit}
+  input:focus{outline:none;border-color:var(--verde2)}
   .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-  .resumen{margin:16px 0 6px;padding:12px 14px;border-radius:12px;background:#f3ecd8;font-size:15px;display:flex;justify-content:space-between}
+  .ofertas{display:grid;gap:10px;margin:6px 0 4px}
+  .of{position:relative;display:block;margin:0;cursor:pointer}
+  .of input{position:absolute;opacity:0;pointer-events:none}
+  .of .card{display:flex;justify-content:space-between;align-items:center;gap:10px;border:2px solid #d9ccb0;border-radius:14px;padding:12px 14px;background:#fffdf7}
+  .of input:checked + .card{border-color:var(--verde2);background:#eef7f0;box-shadow:0 0 0 3px rgba(47,138,84,.15)}
+  .of .t{font-weight:800;font-size:16px}
+  .of .d{font-size:13px;color:var(--gris)}
+  .of .p{font-weight:800;font-size:18px;color:var(--verde);text-align:right}
+  .of .p small{display:block;font-weight:600;font-size:12px;color:var(--gris);text-decoration:line-through}
+  .badge{display:inline-block;background:var(--dorado);color:#2a1c00;border-radius:99px;font-size:11px;font-weight:800;padding:2px 8px;margin-left:6px;vertical-align:middle}
+  .resumen{margin:16px 0 6px;padding:12px 14px;border-radius:12px;background:#f3ecd8;font-size:15px;display:flex;justify-content:space-between;align-items:center}
+  .resumen b{font-size:20px;color:var(--verde)}
+  .ahorro{font-size:13px;color:var(--verde2);font-weight:700;text-align:right;min-height:18px;margin:0 2px 8px}
   .nota{font-size:13px;color:var(--gris);margin-top:10px}
   .ok{display:none;text-align:center;padding:28px 12px}
   .ok h3{color:var(--verde);font-size:22px;margin:0 0 8px}
-  .aviso{font-size:12.5px;color:var(--gris);padding:18px 0 40px;text-align:center}
-  .err{color:#a02020;font-size:14px;margin-top:8px;display:none}
+  .aviso{font-size:12.5px;color:var(--gris);padding:18px 0 30px;text-align:center}
+  .err{color:var(--rojo);font-size:14px;margin-top:8px;display:none}
+  details{background:#fff;border:1px solid #eadfc6;border-radius:12px;padding:12px 14px;margin-bottom:10px}
+  summary{font-weight:700;cursor:pointer}
+  details p{margin:8px 0 0;color:var(--gris);font-size:15px}
+  .sticky{position:fixed;left:0;right:0;bottom:0;background:rgba(251,246,234,.97);border-top:1px solid #eadfc6;padding:10px 14px;z-index:9;transition:transform .25s}
+  .sticky.off{transform:translateY(110%)}
+  .sticky .btn{max-width:520px;margin:0 auto;padding:14px}
 </style>
 </head>
 <body>
@@ -49,25 +77,34 @@
 <header class="hero">
   <div class="wrap">
     <span class="tag">Tradición de fin de año</span>
-    <h1>Kit de Limpieza y Protección para tu Hogar</h1>
-    <p class="sub">Tres esencias tradicionales para recibir el año nuevo con la casa limpia, en calma y con buena energía.</p>
+    <h1>Kit de Limpieza Energética y Aromas de Protección para tu Hogar</h1>
+    <p class="sub">Tres productos tradicionales para despedir el año con la casa limpia, perfumada y en orden.</p>
     <div class="imgbox">
-      <img src="https://d39ru7awumhhs2.cloudfront.net/colombia/products/2337289/52fdabea-1a72-487b-9cf3-db475dee191b.jpeg" alt="Kit de Limpieza y Protección para tu Hogar" onerror="this.parentNode.innerHTML='<div class=ph>Kit de Limpieza y Protección</div>'">
+      <img src="https://d39ru7awumhhs2.cloudfront.net/colombia/products/2337289/52fdabea-1a72-487b-9cf3-db475dee191b.jpeg" alt="Kit de Limpieza Energética y Aromas de Protección" onerror="this.parentNode.innerHTML='<div class=ph>Kit de Limpieza y Protección</div>'">
     </div>
     <div class="precio"><b>$85.000</b><span>COP · pagas al recibir</span></div>
+    <div class="combos">Llévate <b>2 kits por $150.000</b> (ahorras $20.000) o <b>3 kits por $210.000</b> (ahorras $45.000)</div>
     <div class="cta"><a class="btn" href="#pedido">Quiero mi kit</a></div>
   </div>
 </header>
+
+<div class="trust">
+  <div class="wrap">
+    <div><b>💵</b>Pagas al recibir</div>
+    <div><b>📞</b>Te llamamos a confirmar</div>
+    <div><b>📦</b>Envío a tu ciudad</div>
+  </div>
+</div>
 
 <main class="wrap">
 
   <section>
     <h2>Qué incluye</h2>
     <ul class="check">
-      <li>Riego astral para limpiar y despejar el ambiente</li>
-      <li>Esencia de protección “Cuerno Siervo” de uso tradicional</li>
-      <li>Esencia abrecaminos para empezar el año con ánimo</li>
-      <li>Instrucciones sencillas de uso paso a paso</li>
+      <li>Riego astral: para trapear y perfumar el ambiente</li>
+      <li>Esencia de protección “Cuerno Siervo”, de uso tradicional</li>
+      <li>Esencia abrecaminos, para cerrar tu ritual de fin de año</li>
+      <li>Instrucciones sencillas de uso, paso a paso</li>
     </ul>
   </section>
 
@@ -76,7 +113,7 @@
     <div class="pasos">
       <div class="paso"><h3><span class="num">1</span>Limpia</h3><p>Un chorrito del riego en un balde con agua y trapea de adentro hacia afuera.</p></div>
       <div class="paso"><h3><span class="num">2</span>Protege</h3><p>Aplica la esencia de protección en puertas y esquinas, según las instrucciones del frasco.</p></div>
-      <div class="paso"><h3><span class="num">3</span>Abre caminos</h3><p>Cierra con la esencia abrecaminos y recibe el año con la casa en orden.</p></div>
+      <div class="paso"><h3><span class="num">3</span>Cierra el ritual</h3><p>Termina con la esencia abrecaminos y recibe el año con la casa en orden.</p></div>
     </div>
   </section>
 
@@ -84,8 +121,19 @@
     <h2>Haz tu pedido</h2>
     <div class="formcard">
       <form id="f" novalidate>
+        <label>Elige tu paquete</label>
+        <div class="ofertas">
+          <label class="of"><input type="radio" name="cantidad" value="1" checked>
+            <div class="card"><div><div class="t">1 kit</div><div class="d">Para estrenarlo en casa</div></div><div class="p">$85.000</div></div></label>
+          <label class="of"><input type="radio" name="cantidad" value="2">
+            <div class="card"><div><div class="t">2 kits <span class="badge">AHORRAS $20.000</span></div><div class="d">Uno para ti y otro para regalar</div></div><div class="p"><small>$170.000</small>$150.000</div></div></label>
+          <label class="of"><input type="radio" name="cantidad" value="3">
+            <div class="card"><div><div class="t">3 kits <span class="badge">AHORRAS $45.000</span></div><div class="d">El mejor precio por kit</div></div><div class="p"><small>$255.000</small>$210.000</div></div></label>
+        </div>
+        <p class="nota" style="margin-top:2px">El precio tachado es el de comprar los kits por separado a $85.000 cada uno.</p>
+
         <label for="nombre">Nombre completo</label>
-        <input id="nombre" name="nombre" autocomplete="name" required placeholder="Ej: María Pérez">
+        <input id="nombre" name="nombre" type="text" autocomplete="name" required placeholder="Ej: María Pérez">
 
         <label for="tel">Celular (WhatsApp)</label>
         <input id="tel" name="telefono" type="tel" inputmode="numeric" autocomplete="tel" required placeholder="Ej: 3001234567">
@@ -93,25 +141,19 @@
         <div class="row">
           <div>
             <label for="depto">Departamento</label>
-            <input id="depto" name="departamento" required placeholder="Ej: Cesar">
+            <input id="depto" name="departamento" type="text" required placeholder="Ej: Cesar">
           </div>
           <div>
             <label for="ciudad">Ciudad</label>
-            <input id="ciudad" name="ciudad" required placeholder="Ej: Valledupar">
+            <input id="ciudad" name="ciudad" type="text" required placeholder="Ej: Valledupar">
           </div>
         </div>
 
         <label for="dir">Dirección completa y barrio</label>
-        <input id="dir" name="direccion" autocomplete="street-address" required placeholder="Calle, número, barrio y punto de referencia">
-
-        <label for="cant">Cantidad</label>
-        <select id="cant" name="cantidad">
-          <option value="1">1 kit</option>
-          <option value="2">2 kits</option>
-          <option value="3">3 kits</option>
-        </select>
+        <input id="dir" name="direccion" type="text" autocomplete="street-address" required placeholder="Calle, número, barrio y punto de referencia">
 
         <div class="resumen"><span>Total a pagar al recibir</span><b id="total">$85.000</b></div>
+        <div class="ahorro" id="ahorro"></div>
 
         <button class="btn" type="submit" id="enviar">Enviar pedido</button>
         <div class="err" id="err">Revisa que todos los campos estén completos y que el celular tenga 10 dígitos.</div>
@@ -125,32 +167,63 @@
     </div>
   </section>
 
+  <section>
+    <h2>Preguntas frecuentes</h2>
+    <details><summary>¿Cómo pago?</summary><p>Pagas en efectivo cuando el transportador te entregue el paquete. No pagas nada por adelantado.</p></details>
+    <details><summary>¿Cuándo me llegan?</summary><p>Cuando te llamemos para confirmar, te decimos el tiempo estimado de entrega para tu ciudad.</p></details>
+    <details><summary>¿Qué es este kit?</summary><p>Es un producto de uso tradicional y cultural, para perfumar y ambientar el hogar en fechas de cambio de año. No es un producto de limpieza química ni de uso médico.</p></details>
+    <details><summary>¿Por qué me llaman?</summary><p>Para confirmar tu dirección y evitar errores en la entrega. Si no contestas, el pedido no se envía.</p></details>
+  </section>
+
   <p class="aviso">Producto de uso tradicional y cultural. No garantizamos resultados específicos ni sustituye consejo médico, legal ni financiero.</p>
 </main>
 
+<div class="sticky" id="sticky"><a class="btn" href="#pedido">Pedir mi kit · Pagas al recibir</a></div>
+
 <script>
   var ENDPOINT = "https://script.google.com/macros/s/AKfycbxMt3KqREMiRCmoVeYTcHRmfhCRGr2F-O8mDu16rEwX8mGoY7hSPSeKhT1VXLj2nPwxQQ/exec";
-  var PRECIO = 85000;
+  var PRECIOS = {1: 85000, 2: 150000, 3: 210000};
+  var SUELTO = 85000;
 
   function fmt(n){ return "$" + n.toLocaleString("es-CO"); }
-  var cant = document.getElementById("cant"), total = document.getElementById("total");
-  cant.addEventListener("change", function(){ total.textContent = fmt(PRECIO * Number(cant.value)); });
+  var f = document.getElementById("f");
+  var total = document.getElementById("total"), ahorro = document.getElementById("ahorro");
 
-  document.getElementById("f").addEventListener("submit", function(e){
+  function cantidad(){ return Number(f.querySelector("input[name=cantidad]:checked").value); }
+  function actualizar(){
+    var c = cantidad();
+    total.textContent = fmt(PRECIOS[c]);
+    var a = SUELTO * c - PRECIOS[c];
+    ahorro.textContent = a > 0 ? "Ahorras " + fmt(a) + " frente a comprarlos por separado" : "";
+  }
+  f.addEventListener("change", actualizar);
+  actualizar();
+
+  // Oculta la barra fija cuando el formulario está a la vista
+  var sticky = document.getElementById("sticky"), ped = document.getElementById("pedido");
+  function barra(){
+    var r = ped.getBoundingClientRect();
+    sticky.classList.toggle("off", r.top < window.innerHeight * 0.6 && r.bottom > 0);
+  }
+  window.addEventListener("scroll", barra, {passive:true}); barra();
+
+  f.addEventListener("submit", function(e){
     e.preventDefault();
-    var f = e.target, err = document.getElementById("err");
+    var err = document.getElementById("err");
     var tel = f.telefono.value.replace(/\D/g, "");
     var ok = f.nombre.value.trim() && f.departamento.value.trim() && f.ciudad.value.trim() && f.direccion.value.trim() && tel.length === 10;
+    err.textContent = "Revisa que todos los campos estén completos y que el celular tenga 10 dígitos.";
     err.style.display = ok ? "none" : "block";
     if(!ok) return;
 
+    var c = cantidad();
     var data = {
       nombre: f.nombre.value.trim(),
       telefono: tel,
       ciudad: f.ciudad.value.trim() + ", " + f.departamento.value.trim(),
       direccion: f.direccion.value.trim(),
-      cantidad: f.cantidad.value,
-      precio: PRECIO * Number(f.cantidad.value)
+      cantidad: String(c),
+      precio: PRECIOS[c]
     };
 
     var btn = document.getElementById("enviar");
@@ -159,6 +232,7 @@
     function listo(){
       f.style.display = "none";
       document.getElementById("ok").style.display = "block";
+      sticky.style.display = "none";
     }
 
     fetch(ENDPOINT, { method:"POST", mode:"no-cors", headers:{"Content-Type":"text/plain;charset=utf-8"}, body: JSON.stringify(data) })

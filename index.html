@@ -71,6 +71,23 @@
   .sticky.off{transform:translateY(110%)}
   .sticky .btn{max-width:520px;margin:0 auto;padding:14px}
 </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2186719515563395');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2186719515563395&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -236,7 +253,7 @@
     }
 
     fetch(ENDPOINT, { method:"POST", mode:"no-cors", headers:{"Content-Type":"text/plain;charset=utf-8"}, body: JSON.stringify(data) })
-      .then(listo)
+      .then(function(){ try{ fbq('track','Lead',{value:data.precio,currency:'COP'}); }catch(e){} listo(); })
       .catch(function(){ btn.disabled=false; btn.textContent="Enviar pedido"; err.textContent="No se pudo enviar. Intenta de nuevo."; err.style.display="block"; });
   });
 </script>
